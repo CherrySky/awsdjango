@@ -19,8 +19,7 @@ class Receipt(models.Model):
     invoice_number = models.CharField(max_length=200, blank=True)
     serial_number = models.CharField(max_length=200, blank=True)
     comment = models.CharField(max_length=200, blank=True)
-
-    # receipt_file = models.FileField()
+    receipt_pic = models.ImageField(upload_to="upload_receipt", blank=True)
 
     def __str__(self):
         return self.product_name
