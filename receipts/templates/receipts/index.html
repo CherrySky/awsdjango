@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'receipts/style.css' %}">
+
+{% if receipts_list %}
+    <ul>
+    {% for receipt in receipts_list %}
+        <li><a href="{% url 'receipts:detail' receipt.id %}">{{ receipt.product_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No receipts are available.</p>
+{% endif %}
